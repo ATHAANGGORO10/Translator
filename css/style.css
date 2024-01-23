@@ -37,16 +37,16 @@ body {
 
 .wrapper {
     border-radius: 5px;
-    border: 2px solid var(--Color-default-8);
 }
 
 .wrapper .text-input {
     display: flex;
-    border-bottom: 2px solid var(--Color-default-8);
+    border-radius: 7px;
+    border: 2px solid var(--Color-default-8);
 }
 
 .text-input .to-text {
-    border-radius: 0px;
+    border-radius: 0;
     border-left: 2px solid var(--Color-default-8);
 }
 
@@ -62,60 +62,32 @@ body {
     border-radius: 5px;
 }
 
-.controls,
-.icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+li.from-1 select,
+li.from-2 select {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    appearance: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: var(--Color-default-5);
 }
 
 .controls {
     list-style: none;
-    padding: 12px 15px;
-}
-
-.controls .row .icons {
-    width: 38%;
-}
-
-.controls .row .icons i {
-    width: 50px;
-    font-size: 14px;
-    cursor: pointer;
-    justify-content: center;
-    color: var(--Color-default-6);
-    transition: transform 0.2s ease;
-}
-
-.controls .row.from .icons {
-    padding-right: 15px;
-    border-right: 1px solid var(--Color-default-8);
-}
-
-.controls .row.to .icons {
-    padding-left: 15px;
-    border-left: 1px solid var(--Color-default-8);
-}
-
-.controls .row select {
-    border: none;
-    outline: none;
-    font-size: 18px;
-    background: none;
-    padding-left: 5px;
-    color: var(--Color-default-5);
+    margin-top: 20px;
 }
 
 .text-input textarea::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
 }
 
-.controls .row select::-webkit-scrollbar {
+.controls select::-webkit-scrollbar {
     width: 8px;
 }
 
 .text-input textarea::-webkit-scrollbar-track,
-.controls .row select::-webkit-scrollbar-track {
+.controls select::-webkit-scrollbar-track {
     background: var(--Color-default-9);
 }
 
@@ -124,17 +96,22 @@ body {
     background: var(--Color-default-4);
 }
 
-.controls .row select::-webkit-scrollbar-thumb {
+.controls select::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background: var(--Color-default-3);
-    border-right: 2px solid var(--Color-default-9);
 }
 
-.controls .exchange {
+.controls .exchange i {
+    display: flex;
+    padding: 20px;
     cursor: pointer;
     font-size: 16px;
-    color: var(--Color-default-7);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    color: var(--Color-default-9);
     transition: transform 0.2s ease;
+    background-color: var(--Color-default-2);
 }
 
 .controls i:active {
@@ -152,9 +129,16 @@ body {
     font-weight: bold;
     border-radius: 5px;
     color: var(--Color-default-9);
+    transition: transform 0.2s ease;
     background: var(--Color-default-2);
 }
 
+.container button:active {
+    transform: scale(0.9);
+}
+
+
+/* Media */
 @media (max-width: 660px) {
     .container {
         padding: 20px;
@@ -166,23 +150,15 @@ body {
 
     .text-input .to-text {
         border-left: 0px;
-        border-top: 1px solid var(--Color-default-8);
+        border-top: 2px solid var(--Color-default-8);
     }
 
     .text-input textarea {
         height: 200px;
     }
 
-    .controls .row .icons {
-        display: none;
-    }
-
     .container button {
         padding: 13px;
-        font-size: 16px;
-    }
-
-    .controls .row select {
         font-size: 16px;
     }
 
